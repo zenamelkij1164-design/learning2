@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -6,70 +5,79 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  line-height: 1.5;
-  color: #222;
-  background: #fff;
+  background-color: #f5f5f5;
 }
 
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 0 15px;
 }
 
-#header, #footer {
+header#header, footer#footer {
   width: 100%;
-  border: 3px solid #397ac1;
-  background: #e8f2ff;
+  background-color: #0055a4;
+  color: white;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
-  gap: 25px;
+  justify-content: space-between;
+  padding: 15px 0;
+  border: 2px solid #0055a4;
 }
 
-.logo {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+.logo img {
+  max-height: 60px;
+  width: auto;
 }
 
 .header-content {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 #menu {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
 }
 
 #menu a {
-  color: #18599c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .site-title {
-  margin: 12px 0 0;
-  font-size: 26px;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
-.content-block {
-  max-width: 960px;
-  margin: 20px auto;
+main#main {
+  padding: 30px 0;
+}
+
+.content-block, .block {
+  background-color: white;
   padding: 20px;
-  border: 3px solid #397ac1;
-  background: #f4f9ff;
+  margin-bottom: 30px;
+  border: 2px solid #0055a4;
 }
 
-.content-block h2 {
+.content-block h2, .block h2 {
   margin-top: 0;
-  text-align: center;
+  color: #0055a4;
 }
 
 #list ul {
-  padding-left: 25px;
-  overflow-wrap: anywhere;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#list li {
+  margin-bottom: 10px;
 }
 
 #list img {
@@ -80,72 +88,79 @@ body {
 .schedule-table {
   width: 100%;
   border-collapse: collapse;
-  text-align: center;
-}
-
-.schedule-table th,
-.schedule-table td {
-  border: 1px solid #397ac1;
-  padding: 8px;
-}
-
-.schedule-table th {
-  background: #bcd8f5;
-}
-
-.schedule-table tbody tr:nth-child(odd) {
-  background: #e4f0ff;
-}
-
-.schedule-table tbody tr:nth-child(even) {
-  background: #fff;
-}
-
-.split .bottom {
-  border-top: 1px solid #397ac1;
-}
-
-#table {
-  overflow-x: auto;
-}
-
-#form form {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-#form input:not([type="radio"]):not([type="checkbox"]),
-#form select,
-#form textarea {
-  max-width: 100%;
-  width: 100%;
-  padding: 7px;
-}
-
-#form fieldset {
   margin-bottom: 15px;
 }
 
-#form button {
-  padding: 8px 18px;
+.schedule-table th, .schedule-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.schedule-table thead th {
+  background-color: #0055a4;
+  color: white;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.schedule-table .split {
+  text-align: left;
+  padding: 0;
+}
+
+.schedule-table .split div {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.schedule-table .split div:last-child {
+  border-bottom: none;
+}
+
+form p {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0055a4;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-#footer {
-  margin-top: 20px;
+button:hover {
+  background-color: #004488;
 }
 
-@media (max-width: 600px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #menu {
-    gap: 10px;
-  }
-
-  .content-block {
-    padding: 12px;
-  }
+footer#footer {
+  text-align: center;
+  padding: 15px 0;
+  border: 2px solid #0055a4;
 }
