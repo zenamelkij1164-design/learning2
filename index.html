@@ -9,25 +9,158 @@
 <body>
 
   <header id="header">
-    <div class="container header-inner">
-      <div class="logo"><img src="https://avatars.mds.yandex.net/i?id=a283abc3bae72ce7ab9987b6dee9ae04d1fe76c2-10702414-images-thumbs&n=13" alt="Логотип"></div>
-      <div class="header-content">
+    <div class="container header-inner clearfix">
+      <!-- Левая часть: логотип и название -->
+      <div class="header-left">
+        <div class="logo"><img src="https://avatars.mds.yandex.net/i?id=a283abc3bae72ce7ab9987b6dee9ae04d1fe76c2-10702414-images-thumbs&n=13" alt="Логотип"></div>
+        <div class="site-title">Задание 2</div>
+      </div>
+
+      <!-- Правая часть: меню, расписание, форма -->
+      <div class="header-right">
         <nav id="menu">
           <a href="#list">Список гиперссылок</a>
           <a href="#table">Расписание ПМ21/2</a>
           <a href="#form">Форма</a>
         </nav>
-        <div class="site-title">Задание 2</div>
+
+        <section class="block" id="table">
+          <h2>Расписание ПМ21/2</h2>
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Пара</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+                <th>Суббота</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td rowspan="6">КСРС</td>
+                <td class="split">
+                  <div class="top">Комп. сети лаб</div>
+                  <div class="bottom"></div>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td></td>
+                <td>Матан лекция</td>
+                <td>Матан лаб</td>
+                <td></td>
+                <td>Иностранный яз лаб</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td></td>
+                <td>Диффуры лаб</td>
+                <td>Диффуры лекция</td>
+                <td>Физра</td>
+                <td>Матан лаб</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td class="split">
+                  <div class="top">Экономика лекция</div>
+                  <div class="bottom">Экономика п/з</div>
+                </td>
+                <td>WEB лаб</td>
+                <td>Физика лекция</td>
+                <td class="split">
+                  <div class="top">Комп. сети лекция</div>
+                  <div class="bottom">Матан лаб</div>
+                </td>
+                <td>ООП лек</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>WEB лекция</td>
+                <td>ООП лаб</td>
+                <td></td>
+                <td>Физика п/з</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Матан лаб</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="form" class="content-block">
+          <h2>Форма</h2>
+          <form action="#" method="post">
+            <p>
+              <label for="fio">ФИО:</label><br>
+              <input type="text" id="fio" name="fio" placeholder="Щербина Евгений Леонидович" required>
+            </p>
+            <p>
+              <label for="phone">Телефон:</label><br>
+              <input type="tel" id="phone" name="phone" placeholder="+7 (918) 247-85-39">
+            </p>
+            <p>
+              <label for="email">Почта:</label><br>
+              <input type="email" id="email" name="email" placeholder="example11@example.com">
+            </p>
+            <p>
+              <label for="birthdate">День рождения:</label><br>
+              <input type="date" id="birthdate" name="birthdate">
+            </p>
+            <fieldset>
+              <legend>Пол:</legend>
+              <label><input type="radio" name="gender" value="male"> Мужской</label>
+              <label><input type="radio" name="gender" value="female"> Женский</label>
+            </fieldset>
+            <p>
+              <label for="langs">Любимый язык программирования (можно выбрать несколько, Ctrl+клик):</label><br>
+              <select id="langs" name="langs[]" multiple size="11">
+                <option value="pascal">Pascal</option>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="javascript">JavaScript</option>
+                <option value="php">PHP</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="haskell">Haskell</option>
+                <option value="clojure">Clojure</option>
+                <option value="prolog">Prolog</option>
+                <option value="scala">Scala</option>
+              </select>
+            </p>
+            <p>
+              <label for="bio">Биография:</label><br>
+              <textarea id="bio" name="bio" rows="6" cols="50" placeholder="Расскажите немного о себе..."></textarea>
+            </p>
+            <p>
+              <label><input type="checkbox" name="contract" value="yes"> С контрактом ознакомлен(а)</label>
+            </p>
+            <p>
+              <button type="submit">Сохранить</button>
+            </p>
+          </form>
+        </section>
       </div>
     </div>
   </header>
 
   <main id="main">
     <div class="container">
-
       <section id="list" class="content-block">
         <h2>Список гиперссылок</h2>
-
         <ul>
           <li><a href="https://kubsu.ru">1) Абсолютная гиперссылка на главную страницу сайта kubsu.ru</a></li>
           <li><a href="https://kubsu.ru">2) Абсолютная гиперссылка на kubsu.ru (https)</a></li>
@@ -81,146 +214,6 @@
           </li>
         </ul>
       </section>
-
-      <section class="block" id="table">
-        <h2>Расписание ПМ21/2</h2>
-        <table class="schedule-table">
-            <thead>
-                <tr>
-                    <th>Пара</th>
-                    <th>Понедельник</th>
-                    <th>Вторник</th>
-                    <th>Среда</th>
-                    <th>Четверг</th>
-                    <th>Пятница</th>
-                    <th>Суббота</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td></td>
-                    <td></td>
-                    <td rowspan="6">КСРС</td>
-                    <td class="split">
-                        <div class="top">Комп. сети лаб</div>
-                        <div class="bottom"></div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td></td>
-                    <td>Матан лекция</td>
-                    <td>Матан лаб</td>
-                    <td></td>
-                    <td>Иностранный яз лаб</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td></td>
-                    <td>Диффуры лаб</td>
-                    <td>Диффуры лекция</td>
-                    <td>Физра</td>
-                    <td>Матан лаб</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td class="split">
-                        <div class="top">Экономика лекция</div>
-                        <div class="bottom">Экономика п/з</div>
-                    </td>
-                    <td>WEB лаб</td>
-                    <td>Физика лекция</td>
-                    <td class="split">
-                        <div class="top">Комп. сети лекция</div>
-                        <div class="bottom">Матан лаб</div>
-                    </td>
-                    <td>ООП лек</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>WEB лекция</td>
-                    <td>ООП лаб</td>
-                    <td></td>
-                    <td>Физика п/з</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Матан лаб</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-      </section>
-
-      <section id="form" class="content-block">
-        <h2>Форма</h2>
-
-        <form action="#" method="post">
-          <p>
-            <label for="fio">ФИО:</label><br>
-            <input type="text" id="fio" name="fio" placeholder="Щербина Евгений Леонидович" required>
-          </p>
-
-          <p>
-            <label for="phone">Телефон:</label><br>
-            <input type="tel" id="phone" name="phone" placeholder="+7 (918) 247-85-39">
-          </p>
-
-          <p>
-            <label for="email">Почта:</label><br>
-            <input type="email" id="email" name="email" placeholder="example11@example.com">
-          </p>
-
-          <p>
-            <label for="birthdate">День рождения:</label><br>
-            <input type="date" id="birthdate" name="birthdate">
-          </p>
-
-          <fieldset>
-            <legend>Пол:</legend>
-            <label><input type="radio" name="gender" value="male"> Мужской</label>
-            <label><input type="radio" name="gender" value="female"> Женский</label>
-          </fieldset>
-
-          <p>
-            <label for="langs">Любимый язык программирования (можно выбрать несколько, Ctrl+клик):</label><br>
-            <select id="langs" name="langs[]" multiple size="11">
-              <option value="pascal">Pascal</option>
-              <option value="c">C</option>
-              <option value="cpp">C++</option>
-              <option value="javascript">JavaScript</option>
-              <option value="php">PHP</option>
-              <option value="python">Python</option>
-              <option value="java">Java</option>
-              <option value="haskell">Haskell</option>
-              <option value="clojure">Clojure</option>
-              <option value="prolog">Prolog</option>
-              <option value="scala">Scala</option>
-            </select>
-          </p>
-
-          <p>
-            <label for="bio">Биография:</label><br>
-            <textarea id="bio" name="bio" rows="6" cols="50" placeholder="Расскажите немного о себе..."></textarea>
-          </p>
-
-          <p>
-            <label><input type="checkbox" name="contract" value="yes"> С контрактом ознакомлен(а)</label>
-          </p>
-
-          <p>
-            <button type="submit">Сохранить</button>
-          </p>
-        </form>
-      </section>
-
     </div>
   </main>
 
