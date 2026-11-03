@@ -20,23 +20,36 @@ header#header, footer#footer {
   color: white;
 }
 
+/* flex убираем, чтобы логотип мог float'иться */
 .header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 15px 0;
   border: 2px solid #0055a4;
+  overflow: hidden; /* clearfix для float'ов */
+}
+
+/* Логотип — слева у края */
+.logo {
+  float: left;
 }
 
 .logo img {
   max-height: 60px;
   width: auto;
+  display: block;
 }
 
+/*
+  overflow: hidden превращает блок в BFC —
+  он встаёт рядом с float-логотипом, а не под ним.
+  Внутри — flex: слева "Задание 2", справа меню.
+*/
 .header-content {
+  overflow: hidden;
   display: flex;
   align-items: center;
-  gap: 30px;
+  justify-content: space-between;
+  min-height: 60px;
+  padding-left: 15px;
 }
 
 #menu {
@@ -159,8 +172,9 @@ button:hover {
   background-color: #004488;
 }
 
+/* Футер: "Щербина Евгений" — слева */
 footer#footer {
-  text-align: center;
+  text-align: left;
   padding: 15px 0;
   border: 2px solid #0055a4;
 }
